@@ -1,348 +1,554 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Samuel Alikali | Mechatronics & Embedded Systems</title>
+<title>Samuel Alikali | Mechatronics & Embedded Systems</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f5f7fb;
+    color:#1f2937;
+    line-height:1.6;
+}
+
+header{
+    background:#111827;
+    color:white;
+    padding:18px 8%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+nav h2{
+    font-size:22px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+.hero{
+    min-height:85vh;
+    display:flex;
+    align-items:center;
+    padding:70px 8%;
+    background:white;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.tag{
+    display:inline-block;
+    padding:8px 14px;
+    border-radius:25px;
+    background:#e8eefc;
+    color:#2563eb;
+    font-weight:bold;
+}
+
+.hero h1{
+    font-size:clamp(42px,7vw,70px);
+    line-height:1.05;
+    margin:18px 0;
+}
+
+.hero h3{
+    font-size:23px;
+    color:#2563eb;
+}
+
+.hero p{
+    font-size:19px;
+    color:#555;
+    max-width:700px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:13px 22px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    border-radius:7px;
+    font-weight:bold;
+}
+
+.btn.secondary{
+    background:#111827;
+    margin-left:10px;
+}
+
+section{
+    padding:70px 8%;
+    max-width:1150px;
+    margin:auto;
+}
+
+section h2{
+    font-size:35px;
+    margin-bottom:30px;
+}
+
+.card{
+    background:white;
+    padding:28px;
+    border-radius:14px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.06);
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.skill{
+    background:#eef2ff;
+    padding:10px 15px;
+    border-radius:25px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+}
+
+.project,
+.service{
+    background:white;
+    padding:28px;
+    border-radius:14px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.06);
+}
+
+.project h3,
+.service h3{
+    margin-bottom:12px;
+    color:#111827;
+}
+
+.project-icon{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.service-icon{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.highlight{
+    background:#111827;
+    color:white;
+}
+
+.highlight h2{
+    color:white;
+}
+
+.highlight p{
+    color:#ddd;
+}
+
+.contact-box{
+    text-align:center;
+}
+
+.contact-box a{
+    color:#2563eb;
+    text-decoration:none;
+}
+
+footer{
+    text-align:center;
+    padding:35px;
+    background:#111827;
+    color:white;
+}
+
+@media(max-width:700px){
+
+    nav a{
+        display:none;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #222;
-      background: #f5f7fa;
+    .hero{
+        min-height:75vh;
     }
 
-    header {
-      background: #111827;
-      color: white;
-      padding: 20px 8%;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    .hero h1{
+        font-size:45px;
     }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .hero h3{
+        font-size:20px;
     }
 
-    nav h2 {
-      font-size: 22px;
+    .btn.secondary{
+        margin-left:0;
     }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-    }
-
-    .hero {
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      padding: 60px 8%;
-      background: white;
-    }
-
-    .hero-content {
-      max-width: 800px;
-    }
-
-    .hero h1 {
-      font-size: 55px;
-      margin: 15px 0;
-    }
-
-    .hero h3 {
-      font-size: 25px;
-      color: #2563eb;
-    }
-
-    .hero p {
-      font-size: 19px;
-      color: #555;
-      max-width: 700px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 13px 22px;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      border-radius: 7px;
-    }
-
-    section {
-      padding: 70px 8%;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    section h2 {
-      font-size: 35px;
-      margin-bottom: 25px;
-    }
-
-    .card {
-      background: white;
-      padding: 25px;
-      margin-bottom: 20px;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .skill {
-      background: #e8eefc;
-      padding: 10px 15px;
-      border-radius: 20px;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-
-    .project {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-    }
-
-    .project h3 {
-      margin-bottom: 10px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #111827;
-      color: white;
-    }
-
-    @media (max-width: 700px) {
-      nav a {
-        display: none;
-      }
-
-      .hero h1 {
-        font-size: 42px;
-      }
-    }
-  </style>
+}
+</style>
 </head>
+
 
 <body>
 
 <header>
-  <nav>
-    <h2>Samuel Alikali</h2>
 
-    <div>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<nav>
+
+<h2>Samuel Alikali</h2>
+
+<div>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+
+</nav>
+
 </header>
 
 
+<!-- HERO -->
+
 <section class="hero">
-  <div class="hero-content">
 
-    <h3>Mechatronics Engineering | Embedded Systems | IoT</h3>
+<div class="hero-content">
 
-    <h1>Samuel Alikali</h1>
+<span class="tag">
+Mechatronics • Embedded Systems • IoT
+</span>
 
-    <p>
-      Mechatronics Engineering student passionate about Arduino,
-      ESP32, IoT, embedded systems, CAD design and web development.
-      I enjoy turning engineering ideas into practical solutions.
-    </p>
+<h1>
+Samuel Alikali
+</h1>
 
-    <a class="btn" href="#projects">View My Projects</a>
+<h3>
+Mechatronics Engineering Student & Technical Developer
+</h3>
 
-  </div>
+<p>
+I develop practical technology solutions using Arduino, ESP32,
+IoT, embedded systems, CAD and web development.
+</p>
+
+<a class="btn" href="#services">
+My Services
+</a>
+
+<a class="btn secondary" href="#contact">
+Contact Me
+</a>
+
+</div>
+
 </section>
 
+
+<!-- ABOUT -->
 
 <section id="about">
 
-  <h2>About Me</h2>
+<h2>About Me</h2>
 
-  <div class="card">
+<div class="card">
 
-    <p>
-      My name is Alikali Ojima-Ojo Samuel. I am a Mechatronics
-      Engineering student developing practical skills in electronics,
-      embedded systems, automation, CAD and software development.
-    </p>
+<p>
+My name is <strong>Alikali Ojima-Ojo Samuel</strong>. I am a
+Mechatronics Engineering student with an interest in embedded
+systems, electronics, automation, CAD design and software
+development.
+</p>
 
-    <br>
+<br>
 
-    <p>
-      I enjoy working with microcontrollers and developing practical
-      technology solutions using platforms such as Arduino and ESP32.
-    </p>
+<p>
+I enjoy building practical projects with microcontrollers such
+as Arduino and ESP32 and exploring how hardware and software
+can work together to solve real-world problems.
+</p>
 
-    <br>
+<br>
 
-    <p>
-      I am currently gaining practical engineering experience through
-      my industrial training at NASENI in Abuja.
-    </p>
+<p>
+I am currently gaining practical engineering experience through
+my industrial training at NASENI in Abuja.
+</p>
 
-  </div>
+</div>
 
 </section>
 
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<h2>What I Can Help With</h2>
+
+<div class="grid">
+
+<div class="service">
+
+<div class="service-icon">⚙️</div>
+
+<h3>Arduino & ESP32</h3>
+
+<p>
+Arduino and ESP32 programming, basic automation,
+sensor integration and microcontroller projects.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">🌐</div>
+
+<h3>IoT Projects</h3>
+
+<p>
+Connected-device concepts using Wi-Fi, sensors,
+microcontrollers and IoT technologies.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">💻</div>
+
+<h3>Web Development</h3>
+
+<p>
+Simple responsive websites and web interfaces for
+personal, technical and small-business projects.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">📐</div>
+
+<h3>CAD & SolidWorks</h3>
+
+<p>
+3D modelling, mechanical component design and
+engineering CAD work using SolidWorks.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SKILLS -->
 
 <section id="skills">
 
-  <h2>Skills & Tools</h2>
+<h2>Skills & Tools</h2>
 
-  <div class="card skills">
+<div class="card skills">
 
-    <span class="skill">Arduino</span>
-    <span class="skill">ESP32</span>
-    <span class="skill">C++</span>
-    <span class="skill">Java</span>
-    <span class="skill">IoT</span>
-    <span class="skill">Embedded Systems</span>
-    <span class="skill">Web Development</span>
-    <span class="skill">SolidWorks</span>
-    <span class="skill">CAD Design</span>
-    <span class="skill">Electronics</span>
+<span class="skill">Arduino</span>
+<span class="skill">ESP32</span>
+<span class="skill">C++</span>
+<span class="skill">Java</span>
+<span class="skill">IoT</span>
+<span class="skill">Embedded Systems</span>
+<span class="skill">Web Development</span>
+<span class="skill">SolidWorks</span>
+<span class="skill">CAD Design</span>
+<span class="skill">Electronics</span>
 
-  </div>
+</div>
 
 </section>
 
+
+<!-- PROJECTS -->
 
 <section id="projects">
 
-  <h2>Projects</h2>
+<h2>Featured Projects</h2>
 
-  <div class="projects">
-
-    <div class="project">
-      <h3>ESP32 & IoT Projects</h3>
-
-      <p>
-        Working with ESP32 microcontrollers, Wi-Fi connectivity,
-        sensors and connected-device concepts.
-      </p>
-    </div>
+<div class="grid">
 
 
-    <div class="project">
+<div class="project">
 
-      <h3>Smart Water Dispenser</h3>
+<div class="project-icon">🤖</div>
 
-      <p>
-        A mechatronics project involving a smart dispensing system,
-        electronic control and automation concepts.
-      </p>
+<h3>ESP32 & IoT Projects</h3>
 
-    </div>
+<p>
+Projects involving ESP32 microcontrollers, Wi-Fi connectivity,
+sensors and connected-device concepts.
+</p>
 
-
-    <div class="project">
-
-      <h3>Autonomous Surveillance UGV</h3>
-
-      <p>
-        Development concept for an autonomous emergency surveillance
-        unmanned ground vehicle with real-time visual data acquisition.
-      </p>
-
-    </div>
+</div>
 
 
-    <div class="project">
+<div class="project">
 
-      <h3>CAD & Mechanical Design</h3>
+<div class="project-icon">💧</div>
 
-      <p>
-        Engineering design work involving CAD concepts,
-        SolidWorks modelling and mechanical components.
-      </p>
+<h3>Smart Water Dispenser</h3>
 
-    </div>
+<p>
+A mechatronics project involving smart dispensing,
+electronic control and automation concepts.
+</p>
 
-  </div>
+</div>
+
+
+<div class="project">
+
+<div class="project-icon">🚙</div>
+
+<h3>Autonomous Surveillance UGV</h3>
+
+<p>
+Development concept for an autonomous emergency surveillance
+unmanned ground vehicle with real-time visual data acquisition.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<div class="project-icon">📐</div>
+
+<h3>CAD & Mechanical Design</h3>
+
+<p>
+Engineering design work involving CAD concepts,
+SolidWorks modelling and mechanical components.
+</p>
+
+</div>
+
+</div>
 
 </section>
 
+
+<!-- EXPERIENCE -->
 
 <section>
 
-  <h2>Experience</h2>
+<h2>Experience</h2>
 
-  <div class="card">
+<div class="card">
 
-    <h3>Industrial Training — NASENI, Abuja</h3>
+<h3>Industrial Training — NASENI, Abuja</h3>
 
-    <p>
-      Gaining practical exposure to engineering and manufacturing
-      activities while developing hands-on technical skills.
-    </p>
+<p>
+Gaining practical exposure to engineering and manufacturing
+activities while developing hands-on technical skills.
+</p>
 
-  </div>
+</div>
 
 </section>
 
 
+<!-- WHY WORK WITH ME -->
+
+<section>
+
+<div class="card highlight">
+
+<h2>Why Work With Me?</h2>
+
+<p>
+I approach technical projects with curiosity, attention to detail
+and a willingness to learn. My goal is to understand the client's
+requirements and develop practical solutions that meet the project
+needs.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
 <section id="contact">
 
-  <h2>Let's Work Together</h2>
+<div class="card contact-box">
 
-  <div class="card">
+<h2>Let's Work Together</h2>
 
-    <p>
-      Interested in an Arduino, ESP32, IoT, CAD or web-development
-      project? Feel free to contact me.
-    </p>
+<p>
+Have an Arduino, ESP32, IoT, CAD or web-development project?
+I'd be happy to discuss it with you.
+</p>
 
-    <br>
+<br>
 
-    <p>
-      <strong>Email:</strong>
-      <a href="mailto:samuelalikali02@gmail.com">
-        samuelalikali02@gmail.com
-      </a>
-    </p>
+<p>
+<strong>Email:</strong>
+<a href="mailto:samuelalikali02@gmail.com">
+samuelalikali02@gmail.com
+</a>
+</p>
 
-  </div>
+<br>
+
+<a class="btn" href="mailto:samuelalikali02@gmail.com">
+Contact Me
+</a>
+
+</div>
 
 </section>
 
 
 <footer>
 
-  <p>© 2026 Samuel Alikali. All Rights Reserved.</p>
+<p>
+© 2026 Samuel Alikali. All Rights Reserved.
+</p>
 
 </footer>
+
 
 </body>
   </html>
